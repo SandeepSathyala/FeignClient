@@ -1,7 +1,6 @@
-package com.example.FeignClientRest.employeeClient;
+package com.example.FeignClientRest.client;
 
-import com.example.FeignClientRest.model.Employee;
-import com.example.FeignClientRest.response.EmployeeResponse;
+import com.example.FeignClientRest.model.EmployeeResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,5 +12,5 @@ public interface EmployeeClient {
     EmployeeResponse getAllEmployees();
 
     @GetMapping("/users/{id}")
-    Employee getEmployeeById(@PathVariable("id") Long id);
+    EmployeeResponse.Employee getEmployeeById(@PathVariable("id") Long id);
 }
